@@ -1,0 +1,22 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 1em;
+  gap: 1em;
+}
+
+.title {
+  text-wrap: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.image {
+  margin: 1em;
+}
+
+.imageIcon {
+  align-self: center;
+  font-size: 10em;
+}
