@@ -1,0 +1,29 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+  border: 1px solid #6D6D6D;
+  border-radius: 0.25em;
+  width: calc((100%/5) - 1em);
+  min-width: 15em;
+  height: calc((100%/2) - 1em);
+  min-height: 25em;
+  padding: 1em;
+  text-align: center;
+
+  background-color: #373737;
+}
+
+.container:hover {
+  animation: grow 250ms ease-in-out forwards;
+}
+
+@keyframes grow {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
