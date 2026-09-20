@@ -1,49 +1,44 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Project Start
+Before starting project,
+You need a .env file with this variable
+`NEXT_PUBLIC_API_KEY`
+and a working API key in order to fetch data.
 
-## Getting Started
-
-First, run the development server:
-
-```bash
-npm run dev
+Install dependencies before starting project by running
+```
+npm i
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+To start project run
+```
+npm start dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
-
-## Empty folders
-- app/features
-- app/hooks
-- app/lib/[contants, data, utils]
-- app/types
+You can view project in [http://localhost:3000/](http://localhost:3000/)
 
 ## Project Setup
-The app is using with redux and is already setup with the store globally
-- Add new "slices" in the app/features
-- Add new "api" calls in app/services
+This project is setup with React, Nextjs, using Redux with Redux toolkit as state management. I have a basic scafold to start projects in my github, you can check it out if you'd like.
+[react-redux-next-app](https://github.com/nbuendia/react-redux-next-app)
 
-When adding new slices and api calls, make sure you export the new slice/api call in its index file approprately. Then in the app/store file, add the reducer and middleware. If needed, create a hook to to call the slices.
+A little overview of my file structure
+- components
+- - Any custom reusable comonents live here.
+- hooks
+- - Global reusable hooks are usually kept here.
+- sections
+- - The main parts of the app will be sectioned off here into bigger chunks.
+- services
+- - This is where the api calls are.
+- store
+- - This is the redux store setup. All api and state info needs to be added here for redux to work properly.
 
-The lib folder is alaredy divided into seprate sections where you can add the files needed to keep your files clean
-- Add any non changing variables in "constants"
-- Add any static data in "data"
-- Add any functions for your sections and components in "utils"
-- Every folder should include an "index.ts" file thatll export every function inside the sister files for cleaner imports
+## Sorting & filtering
+You can update the code in file
+`Main.tsx`
+Line 10, to add sorting and a genre filter.
+You have the option to add all available sorting options and for genres you would have to input a number (as a string), for example
+```
+const { movies } = useFetchMovies({sort_by: "popularity.desc", with_genres: "27"});
+```
 
-REMEMBER to clean up any empty folders and what you no longer need!
+The api fetch does not need filter or sort option, you can add `sort_by` or `with_genres`, or both as a key, value pair.
